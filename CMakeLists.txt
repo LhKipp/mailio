@@ -155,12 +155,12 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/export.hpp DESTINATION "${INCLUDE_INST
 
 if(Boost_FOUND)
     target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
-    target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
+	target_link_libraries(${PROJECT_NAME} PUBLIC ${Boost_LIBRARIES})
 endif()
 
 if(OPENSSL_FOUND)
     target_include_directories(${PROJECT_NAME} PUBLIC ${OPENSSL_INCLUDE_DIR})
-    target_link_libraries(${PROJECT_NAME} ${OPENSSL_LIBRARIES})
+	target_link_libraries(${PROJECT_NAME} PUBLIC ${OPENSSL_LIBRARIES})
 endif()
 
 if(MINGW)
